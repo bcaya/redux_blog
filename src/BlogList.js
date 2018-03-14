@@ -15,7 +15,7 @@ const BlogList = ({ blogs, dispatch}) => (
             onClick={() => {
               dispatch({ type: 'EDIT_POST' });
             }}>
-            Delete Note
+            Edit Post
           </button>
           <button
             onClick={() => {

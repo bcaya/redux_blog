@@ -22,6 +22,10 @@ state = { ...this.defaultValues };
      let { target: { id, value } } = e;
     this.setState({ [id]: value });
   };
+    edit() {
+    return <BlogForm {...this.state.post} submit={this.submit} />
+  }
+
 
   render() {
     const { post, post_content } = this.state 
