@@ -3,17 +3,31 @@ import { connect } from 'react-redux';
 import Blog from './Blog';
 
 
-const BlogList = ({ blogs }) => (
-  <ul>
-    { blogs.map((b, i) => {
+const BlogList = ({ blogs, dispatch}) => (
+  <div>
+    { blogs.map((b => {
       return ( 
-        <li key={i}>
-          {b}
-        </li>
+        <div key={b.id}>
+          <h3>{b.post}</h3>
+          
+          <p>{b.post_content}</p>
+          <button
+            onClick={() => {
+              dispatch({ type: 'EDIT_POST' });
+            }}>
+            Delete Note
+          </button>
+          <button
+            onClick={() => {
+              dispatch({ type: 'DELETE_POST' });
+            }}>
+            Delete Post
+          </button>
+        </div>
       )
     })
-    }
-  </ul>
+    )}
+  </div>
 )
 
 const mapStateToProps = (state) => {
